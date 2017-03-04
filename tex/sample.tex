@@ -16,37 +16,56 @@ label命令で名前をつける.\TeX では章節や図の番号は自動で振
 \end{equation}
 
 がある.
+数式番号を入れたくなければ,
+\begin{equation}
+	\nonumber
+	\label{eq:test1}
+	E = \sqrt{m^2 c^4 +|\bm{p}|^2 c^2}
+\end{equation}
+
+複数行にわたる式で,位置を揃えたければ,
+\begin{eqnarray}
+	\nonumber
+	E & =    & \sqrt{m^2 c^4 +|\bm{p}|^2 c^2} \\
+	  & \sim & mc^2
+\end{eqnarray}
+
+とする.
 
 \section{図のいれかた}\label{sec:figure}
 
 一般に図はpdfファイル或いはjpgファイルで用意するのが良い.
 pdfファイルでもjpgファイルでもいれかたは同じ.
+図を入れたいところに入れようとしないこと.
+適切な位置に挿入するのは\TeX 様がやってくれる.
 
 
-\begin{figure}[tbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[width=10cm]{fig/figure.pdf}
 	\caption{適当な図}
 	\label{fig:test1}
 \end{figure}
 
-\begin{figure}[tbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[width=10cm]{fig/image.jpg}
 	\caption[ここが目次の図タイトル]{本文の図タイトル \newline すごく長くこの図の説明をしたければ長く書くだけ適当にインデントされる.}
 	\label{fig:test2}
 \end{figure}
 
-横に並べたいとき.
+図\ref{fig:test3}と図\ref{fig:test4}は横に並べたいときの例.
 
-\begin{figure}[tbp]
+\begin{figure}[tb]
 \begin{tabular}{cc}
 \centering
+
 \begin{minipage}{0.5\hsize}
 	\includegraphics[width=7cm]{fig/figure.pdf}
 	\caption{左の図}
 	\label{fig:test3}
 \end{minipage}&
+
 \begin{minipage}{0.5\hsize}
 	\includegraphics[width=7cm]{fig/figure.pdf}
 	\caption{右の図}
@@ -56,9 +75,11 @@ pdfファイルでもjpgファイルでもいれかたは同じ.
 \end{tabular}
 \end{figure}
 
+
 \section{表のいれかた}\label{sec:table}
 
-\begin{table}[tbp]
+表は以下の書式で作成する.サンプルを表\ref{tab:test5}に示す.
+\begin{table}[tb]
 	\centering
 	\caption{表の例}
 		\label{tab:test5}	
