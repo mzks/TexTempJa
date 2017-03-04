@@ -1,0 +1,35 @@
+% main.tex -- parent TeX file
+\documentclass[a4paper,uplatex]{jsreport}
+
+%画像の設定
+\usepackage[dvipdfmx]{graphicx} %画像を貼る
+\usepackage{float} %画像の位置
+\usepackage[format=hang,labelsep=colon,margin=20pt]{caption} %長いキャプションのための設定
+
+\usepackage[dvipdfmx]{hyperref} %リンクとその設定
+\usepackage{pxjahyper}
+\hypersetup{ setpagesize=false, bookmarksnumbered=true, bookmarksopen=true, colorlinks=false, linkcolor=black, citecolor=black, }
+
+%便利なコマンド
+\usepackage{url} %URLコマンド\usl
+\usepackage{siunitx} %SI単位コマンド\si
+\usepackage[version=3]{mhchem} %化学式コマンドce
+
+\begin{document}
+
+\title{浦島太郎\thanks{修士論文}}
+\author{桃太郎\thanks{銀河大学}}
+
+\date{\today} %date \today or 2100/01/01
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+
+%本文
+\input{tex/introduction.tex}
+
+
+%\bibliographystyle{myjunsrt}
+%\bibliography{reference}
+\end{document}
